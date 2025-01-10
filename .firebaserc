@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "angular3d-fe208"
-  }
+    "default": "angular3d-fe208",
+    "angularproject": "angular3d-fe208"
+  },
+  "targets": {},
+  "etags": {}
 }
