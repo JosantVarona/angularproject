@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FigureService } from '../../services/figure.service';
 import { Figure } from '../../models/figure';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-figure-list',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './figure-list.component.html',
   styleUrl: './figure-list.component.css'
 })
