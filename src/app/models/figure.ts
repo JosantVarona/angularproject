@@ -1,6 +1,6 @@
 export interface Figure {
     id?: string; 
     name: string;
-    prize: number;
-    size: number;
+    prize: string;
+    size: string;
 }
