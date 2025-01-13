@@ -30,8 +30,21 @@ export class FigureListComponent implements OnInit {
     });
   }
   
-
-  deleteFigure(id: string): void {
-    this.figureService.deleteFigure(id);
+  editFigure(id: string, figure: Partial<Figure>): void {
+    this.figureService.updateFigure(id, figure)
+      .then(() => {
+        console.log('Figure updated successfully');
+      })
+      .catch((error) => {
+        console.error('Error updating figure:', error);
+      });
   }
+  
+
+  deleteFigure(id: string | undefined): void {
+    if (!id) {
+      console.error('Error: id is undefined.');
+      return;
+    }
+    this.figureService.deleteFigure(id);  }
 }

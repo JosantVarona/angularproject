@@ -1,27 +1,63 @@
 <div class="container mt-4">
     <h2>Modelos</h2>
+    
+    <!-- Tabla de modelos -->
     <table *ngIf="figures.length > 0" class="table table-striped">
-    <thead class="table-dark">
+      <thead class="table-dark">
         <tr>
-        <th scope="col">Nombre</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Tamaño</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Tamaño</th>
+          <th scope="col">Acciones</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr *ngFor="let figure of figures">
-        <td>{{ figure.name }}</td>
-        <td>{{ figure.prize }}</td>
-        <td>{{ figure.size }}</td>
-        <td><div class="d-flex flex-row gap-2 align-items-center"><a [routerLink]="['/figure/editar', figure.id]" class="btn btn-secondary btn-sm"><i class="bi bi-pencil"></i> <span class="d-none d-md-inline-flex ps-2">Editar</span></a> <button (click)="deleteFigure(figure.id!)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> <span class="d-none d-md-inline-flex ps-2">Eliminar</span></button></div></td>
+          <td>{{ figure.name }}</td>
+          <td>{{ figure.prize }}</td>
+          <td>{{ figure.size }}</td>
+          <td>
+            <div class="d-flex gap-2">
+              <!-- Botón para editar -->
+              <a
+                [routerLink]="['/modelos/editar', figure.id]"
+                class="btn btn-secondary btn-sm"
+                title="Editar modelo"
+              >
+                <i class="bi bi-pencil"></i>
+                <span class="d-none d-md-inline ps-2">Editar</span>
+              </a>
+              
+              <!-- Botón para eliminar -->
+              <button
+              *ngIf="figure.id"
+              (click)="deleteFigure(figure.id)"
+              class="btn btn-danger btn-sm"
+              title="Eliminar modelo"
+            >
+              <i class="bi bi-trash"></i>
+              <span class="d-none d-md-inline ps-2">Eliminar</span>
+            </button>
+            </div>
+          </td>
         </tr>
-    </tbody>
+      </tbody>
     </table>
-    <div class="d-grid gap-2 d-md-block">
-        <a [routerLink]="['/modelos/anadir']" class="btn btn-primary" href="#" role="button"><i class="bi bi-plus-lg"></i> Añadir modelo</a>
+    
+    <!-- Mensaje si no hay modelos -->
+    <div *ngIf="figures.length === 0" class="text-center mt-4">
+      <p>No hay modelos disponibles en este momento.</p>
     </div>
-
+    
+    <!-- Botón para añadir un nuevo modelo -->
     <div class="d-grid gap-2 d-md-block mt-4">
-        <a [routerLink]="['/modelos/editar']" class="btn btn-primary" href="#" role="button"><i class="bi bi-plus-lg"></i> Editar modelo</a>
+      <a
+        [routerLink]="['/modelos/anadir']"
+        class="btn btn-primary"
+        role="button"
+      >
+        <i class="bi bi-plus-lg"></i> Añadir modelo
+      </a>
     </div>
-</div>
+  </div>
+  
