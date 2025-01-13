@@ -15,11 +15,15 @@
         <td>{{ user.email }}</td>
         <td>{{ user.dni }}</td>
         <td>{{ user.phone }}</td>
-        <td><div class="d-flex flex-row gap-2 align-items-center"><button (click)="deleteCompany(user.id!)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> <span class="d-none d-md-inline-flex ps-2">Eliminar</span></button></div></td>
+        <td><div class="d-flex flex-row gap-2 align-items-center"><button (click)="deleteUser(user.id!)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> <span class="d-none d-md-inline-flex ps-2">Eliminar</span></button></div></td>
         </tr>
     </tbody>
     </table>
     <div class="d-grid gap-2 d-md-block">
         <a [routerLink]="['/usuarios/anadir']" class="btn btn-primary" href="#" role="button"><i class="bi bi-plus-lg"></i> Añadir usuario</a>
+    </div>
+
+    <div class="d-grid gap-2 d-md-block mt-4">
+        <a [routerLink]="['/usuarios/editar']" class="btn btn-primary" href="#" role="button"><i class="bi bi-plus-lg"></i> Editar usuario</a>
     </div>
 </div>
