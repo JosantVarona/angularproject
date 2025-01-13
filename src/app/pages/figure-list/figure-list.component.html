@@ -13,7 +13,7 @@
         <td>{{ figure.name }}</td>
         <td>{{ figure.prize }}</td>
         <td>{{ figure.size }}</td>
-        <td><div class="d-flex flex-row gap-2 align-items-center"><button (click)="deleteFigure(figure.id!)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> <span class="d-none d-md-inline-flex ps-2">Eliminar</span></button></div></td>
+        <td><div class="d-flex flex-row gap-2 align-items-center"><a [routerLink]="['/figure/editar', figure.id]" class="btn btn-secondary btn-sm"><i class="bi bi-pencil"></i> <span class="d-none d-md-inline-flex ps-2">Editar</span></a> <button (click)="deleteFigure(figure.id!)" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i> <span class="d-none d-md-inline-flex ps-2">Eliminar</span></button></div></td>
         </tr>
     </tbody>
     </table>

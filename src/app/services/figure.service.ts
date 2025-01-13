@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Firestore, collection, addDoc, collectionData, updateDoc, doc, docData, deleteDoc, CollectionReference } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { Firestore, collection, addDoc, collectionData, updateDoc, doc, docData, deleteDoc, CollectionReference, getDocs, QuerySnapshot, query } from '@angular/fire/firestore';
+import { from, Observable } from 'rxjs';
 import { Figure } from '../models/figure';
+import { Inject } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +14,11 @@ export class FigureService {
     this.figureCollection = collection(this.firestore, 'figures');
   }
 
-  getFigures(): Observable<Figure[]> {
-    return collectionData(this.figureCollection, { idField: 'id' }) as Observable<Figure[]>;
+  getFiguresAsObservable() {
+    const figureQuery = query(this.figureCollection);
+    return from(getDocs(figureQuery)); // Convierte la promesa en un Observable
   }
-
+  
   getFigure(id: string): Observable<Figure | undefined> {
     const figureDocRef = doc(this.firestore, `figures/${id}`);
     return docData(figureDocRef) as Observable<Figure | undefined>;
