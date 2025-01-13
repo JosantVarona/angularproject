@@ -14,12 +14,12 @@ import { AuthGuard } from './guards/auth.guard';
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'hola-mundo', component: HelloWorldComponent },
-    { path: 'modelos', component: FigureListComponent, canActivate: [AuthGuard] }, 
-    { path: 'usuarios', component: UserListComponent, canActivate: [AuthGuard] }, 
+    { path: 'modelos', component: FigureListComponent }, 
+    { path: 'usuarios', component: UserListComponent }, 
     { path: 'login', component: LoginGoogleComponent },
-    { path: 'modelos/anadir', component: FigureAddComponent, canActivate: [AuthGuard] },
-    { path: 'modelos/editar/:id', component: FigureEditComponent, canActivate: [AuthGuard] },
-    { path: 'usuarios/anadir', component: UserAddComponent, canActivate: [AuthGuard] },
-    { path: 'usuarios/editar/:id', component: UserEditComponent, canActivate: [AuthGuard] },
+    { path: 'modelos/anadir', component: FigureAddComponent },
+    { path: 'modelos/editar/:id', component: FigureEditComponent },
+    { path: 'usuarios/anadir', component: UserAddComponent },
+    { path: 'usuarios/editar/:id', component: UserEditComponent },
     { path: '**', component: Error404Component }
 ];
