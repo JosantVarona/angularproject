@@ -11,10 +11,10 @@ import { LoginGoogleComponent } from './components/login-google/login-google.com
 export const routes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'hola-mundo', component: HelloWorldComponent },
-    { path: '**', component: Error404Component },
     { path: 'modelos', component: FigureListComponent },
     { path: 'usuarios', component: UserListComponent },
     { path: 'login', component: LoginGoogleComponent },
     { path: 'modelos/anadir', component: FigureAddComponent },
-    { path: 'usuarios/anadir', component: UserAddComponent }
+    { path: 'usuarios/anadir', component: UserAddComponent },
+    { path: '**', component: Error404Component }
 ];
