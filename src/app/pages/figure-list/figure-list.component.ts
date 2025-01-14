@@ -21,23 +21,19 @@ export class FigureListComponent implements OnInit {
       next: (querySnapshot) => {
         this.figures = querySnapshot.docs.map((doc) => ({
           id: doc.id,
-          ...doc.data()
+          ...doc.data(), // Usa doc.data() para obtener los datos
         })) as Figure[];
       },
       error: (error) => {
         console.error('Error fetching figures:', error);
-      }
+      },
     });
   }
   
-  editFigure(id: string, figure: Partial<Figure>): void {
-    this.figureService.updateFigure(id, figure)
-      .then(() => {
-        console.log('Figure updated successfully');
-      })
-      .catch((error) => {
-        console.error('Error updating figure:', error);
-      });
+  editFigure(id: string, updatedFigure: Partial<Figure>) {
+    this.figureService.updateFigure(id, updatedFigure)
+      .then(() => console.log('Figura actualizada correctamente'))
+      .catch((error) => console.error('Error al actualizar la figura:', error));
   }
   
 
