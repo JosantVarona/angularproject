@@ -22,7 +22,7 @@ export class UserListComponent {
     });
   }
 
-  deleteCompany(id: string): void {
+  deleteUser(id: string): void {
     this.userService.deleteUser(id);
   }
 }
