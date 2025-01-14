@@ -6,6 +6,7 @@ import { FigureListComponent } from './pages/figure-list/figure-list.component';
 import { FigureAddComponent } from './pages/figure-add/figure-add.component';
 import { UserListComponent } from './pages/user-list/user-list.component';
 import { UserAddComponent } from './pages/user-add/user-add.component';
+import { ApiList } from './pages/api-use/api-use.component';
 import { LoginGoogleComponent } from './components/login-google/login-google.component';
 
 export const routes: Routes = [
@@ -16,5 +17,6 @@ export const routes: Routes = [
     { path: 'login', component: LoginGoogleComponent },
     { path: 'modelos/anadir', component: FigureAddComponent },
     { path: 'usuarios/anadir', component: UserAddComponent },
+    { path: 'api', component: ApiList },
     { path: '**', component: Error404Component }
 ];
