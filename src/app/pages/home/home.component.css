@@ -1,0 +1,37 @@
+/* Estilo para la sección */
+.container-fluid {
+    height: 50vh; /* Establece la altura de la sección en 50% de la pantalla */
+  }
+  
+  /* Animación de desvanecimiento y cambio de tamaño */
+  .fade-in {
+    animation: fadeIn 3s ease-in-out forwards;
+  }
+  
+  #title {
+    font-size: 5rem; /* Inicia muy grande */
+    animation-delay: 0s;
+  }
+  
+  #subtitle {
+    font-size: 2rem; /* Más pequeño que el título */
+    animation-delay: 2s;
+  }
+  
+  #signature {
+    font-size: 1rem; /* Firma más pequeña */
+    animation-delay: 4s;
+  }
+  
+  /* Animación para achicar el texto y hacer fade-in */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: scale(3); /* Empieza más grande */
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); /* Termina en su tamaño normal */
+    }
+  }
+  
