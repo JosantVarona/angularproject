@@ -9,7 +9,7 @@ import { Figure } from '../../models/figure';
   standalone: true,
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './figure-add.component.html',
-  styleUrl: './figure-add.component.css'
+  styleUrl: './figure-add.component.css',
 })
 export class FigureAddComponent {
   figureForm = new FormGroup({
@@ -20,13 +20,20 @@ export class FigureAddComponent {
   constructor(private figureService: FigureService) {}
 
   submitFigure() {
-    let newFigure: Figure = {
-      name: this.figureForm.value.name ?? "",
-      prize: this.figureForm.value.prize ?? "",
-      size: this.figureForm.value.size ?? ""
-    }
-    this.figureService.addFigure(newFigure).then(()=>{
-      this.figureForm.reset();
-    });
+    const newFigure: Figure = {
+      name: this.figureForm.value.name ?? '',
+      prize: this.figureForm.value.prize ?? '',
+      size: this.figureForm.value.size ?? '',
+    };
+
+    this.figureService
+      .addFigure(newFigure)
+      .then(() => {
+        console.log('Figura añadida correctamente');
+        this.figureForm.reset();
+      })
+      .catch((error) => {
+        console.error('Error al añadir la figura:', error);
+      });
   }
 }
