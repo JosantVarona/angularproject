@@ -1,0 +1,66 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo claro */
+  }
+  
+  .container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center; /* Centra el texto */
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Estilo del título */
+  h1 {
+    font-size: 3rem;
+    color: #333; /* Gris oscuro */
+    margin-bottom: 1rem;
+  }
+  
+  /* Estilo del párrafo */
+  p {
+    font-size: 1.5rem;
+    color: #666; /* Gris medio */
+  }
+  
+  /* Media Queries para adaptabilidad */
+  
+  /* Pantallas grandes (ordenadores) */
+  @media (min-width: 1025px) {
+    h1 {
+      font-size: 4rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+  }
+  
+  /* Pantallas medianas (tablets) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1.8rem;
+    }
+  }
+  
+  /* Pantallas pequeñas (teléfonos) */
+  @media (max-width: 767px) {
+    h1 {
+      font-size: 2rem;
+    }
+    p {
+      font-size: 1.2rem;
+    }
+    .container {
+      padding: 1rem; /* Reduce el relleno en teléfonos */
+    }
+  }
+  
