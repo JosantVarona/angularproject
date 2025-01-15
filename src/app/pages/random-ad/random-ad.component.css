@@ -1,19 +1,71 @@
+/* Estilos generales */
 ul {
-    list-style: none;
-    padding: 0;
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+video {
+  display: block;
+  margin-top: 0.5rem;
+  max-width: 100%;
+  height: auto;
+}
+
+h2 {
+  margin: 0 0 0.5rem 0;
+}
+
+/* Pantallas grandes (ordenadores) */
+@media (min-width: 1025px) {
+  ul {
+    max-width: 800px;
+    margin: 0 auto;
   }
+
   li {
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    padding: 2rem;
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  ul {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  li {
+    font-size: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 767px) {
+  ul {
+    padding: 0 1rem;
+  }
+
+  li {
+    font-size: 0.9rem;
     padding: 1rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
   }
-  video {
-    display: block;
-    margin-top: 0.5rem;
-    max-width: 100%;
-    height: auto;
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
   }
-  h2 {
-    margin: 0 0 0.5rem 0;
+
+  p {
+    font-size: 0.8rem;
+    text-align: center;
   }
+}

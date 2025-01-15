@@ -1,0 +1,75 @@
+/* Estilo general para la barra de navegación */
+.navbar {
+    padding: 1rem 2rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+    margin-right: 15px;
+  }
+  
+  /* Estilo de los botones de usuario */
+  .text-end {
+    display: flex;
+    align-items: center;
+  }
+  
+  .text-end .btn {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+  
+  /* Estilo de los botones en pantallas grandes */
+  @media (min-width: 1024px) {
+    .navbar-nav .nav-link {
+      font-size: 1.2rem;
+    }
+    
+    .text-end .btn {
+      font-size: 1rem;
+    }
+    
+    .navbar-toggler {
+      display: none;
+    }
+  }
+  
+  /* Estilo para pantallas medianas (tabletas) */
+  @media (max-width: 1023px) and (min-width: 768px) {
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+    }
+    
+    .text-end .btn {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Estilo para pantallas pequeñas (móviles) */
+  @media (max-width: 767px) {
+    .navbar-nav .nav-link {
+      font-size: 1rem;
+    }
+    
+    .navbar-toggler {
+      display: block;
+    }
+    
+    .text-end .btn {
+      font-size: 0.9rem;
+    }
+  
+    .text-end .btn span {
+      display: none;
+    }
+  
+    .navbar-collapse {
+      margin-top: 1rem;
+    }
+  }
+  

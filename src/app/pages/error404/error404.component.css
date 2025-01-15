@@ -1,13 +1,10 @@
-/* Estilos generales para el cuerpo de la página */
-body {
+/* Estilo para centrar vertical y horizontalmente */
+section {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh; /* Reduce la altura del cuerpo para los márgenes */
-  margin: 0;
-  background-color: #f8f9fa;
-  font-family: 'Arial', sans-serif;
-  flex-direction: column; /* Asegura que el contenido se alinee correctamente */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  margin: 0; /* Elimina márgenes del contenedor */
 }
 
 /* Estilo para el contenedor principal */
@@ -15,28 +12,25 @@ body {
   text-align: center;
   background-color: #ff6347;
   color: white;
-  padding: 40px 60px;
+  padding: 40px;
   border-radius: 10px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-  max-width: 80%;
-  width: 600px;
+  max-width: 90%;
+  width: 500px;
   animation: fadeIn 2s ease-in-out;
-  margin-left: 30%;
-  margin-top: 20vh; /* Margen superior */
-  margin-bottom: 20vh; /* Margen inferior */
 }
 
 /* Estilo del título de error */
 .error-container h1 {
-  font-size: 4rem;
-  margin-bottom: 20px;
+  font-size: 3rem;
+  margin-bottom: 15px;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 /* Estilo del subtítulo */
 .error-container p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
 }
 
@@ -49,5 +43,55 @@ body {
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* Media Queries */
+
+/* Pantallas grandes (ordenadores) */
+@media (min-width: 1024px) {
+  .error-container {
+    padding: 50px;
+    width: 600px;
+  }
+
+  .error-container h1 {
+    font-size: 4rem;
+  }
+
+  .error-container p {
+    font-size: 1.5rem;
+  }
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .error-container {
+    padding: 40px;
+    width: 80%;
+  }
+
+  .error-container h1 {
+    font-size: 3.5rem;
+  }
+
+  .error-container p {
+    font-size: 1.3rem;
+  }
+}
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 767px) {
+  .error-container {
+    padding: 30px;
+    width: 95%;
+  }
+
+  .error-container h1 {
+    font-size: 2.5rem;
+  }
+
+  .error-container p {
+    font-size: 1rem;
   }
 }

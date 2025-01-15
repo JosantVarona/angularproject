@@ -1,37 +1,88 @@
-/* Estilo para la sección */
+/* Estilo general */
 .container-fluid {
-    height: 50vh; /* Establece la altura de la sección en 50% de la pantalla */
+  height: 50vh; /* Altura del 50% de la pantalla */
+}
+
+/* Animación de desvanecimiento y cambio de tamaño */
+.fade-in {
+  animation: fadeIn 3s ease-in-out forwards;
+}
+
+#title {
+  font-size: 5rem;
+  animation-delay: 0s;
+}
+
+#subtitle {
+  font-size: 2rem;
+  animation-delay: 2s;
+}
+
+#signature {
+  font-size: 1rem;
+  animation-delay: 4s;
+}
+
+/* Animación para fade-in y scale */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(3);
   }
-  
-  /* Animación de desvanecimiento y cambio de tamaño */
-  .fade-in {
-    animation: fadeIn 3s ease-in-out forwards;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
+}
+
+/* Pantallas grandes (ordenadores) */
+@media (min-width: 1025px) {
   #title {
-    font-size: 5rem; /* Inicia muy grande */
-    animation-delay: 0s;
+    font-size: 5rem; /* Tamaño grande para títulos */
   }
-  
   #subtitle {
-    font-size: 2rem; /* Más pequeño que el título */
-    animation-delay: 2s;
+    font-size: 2rem;
   }
-  
   #signature {
-    font-size: 1rem; /* Firma más pequeña */
-    animation-delay: 4s;
+    font-size: 1rem;
   }
-  
-  /* Animación para achicar el texto y hacer fade-in */
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-      transform: scale(3); /* Empieza más grande */
-    }
-    100% {
-      opacity: 1;
-      transform: scale(1); /* Termina en su tamaño normal */
-    }
+  .icon-container i {
+    font-size: 4rem;
   }
-  
+}
+
+/* Pantallas medianas (tablets) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  #title {
+    font-size: 4rem; /* Reduce un poco el título */
+  }
+  #subtitle {
+    font-size: 1.5rem;
+  }
+  #signature {
+    font-size: 0.9rem;
+  }
+  .icon-container i {
+    font-size: 3.5rem; /* Íconos ligeramente más pequeños */
+  }
+}
+
+/* Pantallas pequeñas (teléfonos) */
+@media (max-width: 767px) {
+  #title {
+    font-size: 3rem; /* Reduce significativamente el tamaño */
+  }
+  #subtitle {
+    font-size: 1.2rem;
+  }
+  #signature {
+    font-size: 0.8rem; /* Ajusta la firma para teléfonos */
+    text-align: center; /* Centrado para pantallas pequeñas */
+  }
+  .icon-container i {
+    font-size: 3rem; /* Íconos más pequeños */
+  }
+  .container {
+    padding: 0 1rem; /* Ajusta márgenes laterales para teléfonos */
+  }
+}
